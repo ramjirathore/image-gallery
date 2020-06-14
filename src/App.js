@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, Grid } from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './components/Header/Header';
+
+import theme from './components/UI/theme/theme';
+import Landing from './components/Landing /Landing';
+import Footer from './components/Footer/Footer';
+
+/** This function has been reused in hero block */
+function randomIDs() {
+	return Array.from({ length: 4 }, () => Math.floor(Math.random() * 900));
 }
+
+const App = () => {
+	const IDdata = randomIDs();
+	return (
+		<ThemeProvider theme={theme}>
+			<Grid container direction="column">
+				<Grid item>
+					<Header />
+				</Grid>
+				<Grid item>
+					<Landing IDs={IDdata} />
+				</Grid>
+				<Grid item>
+					<Footer />
+				</Grid>
+			</Grid>
+		</ThemeProvider>
+	);
+};
 
 export default App;
