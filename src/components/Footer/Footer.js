@@ -17,7 +17,7 @@ const Footer = () => {
 	return (
 		<footer className={classes.footer}>
 			<Typography variant="h6" align="center" gutterBottom>
-				Build with ReactJS, Redux and Material-UI
+				Built with ReactJS, Redux and Material-UI
 			</Typography>
 			<Typography
 				variant="subtitle1"
